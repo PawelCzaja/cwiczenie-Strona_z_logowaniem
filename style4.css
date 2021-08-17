@@ -1,0 +1,951 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito&family=Open+Sans:wght@600&display=swap');
+
+
+@keyframes rozwijane{
+    to {
+        top: 100%;
+    }
+}
+
+@keyframes zwijanie{
+    to {
+        bottom: 100%;
+    }
+}
+
+@keyframes slide-bottom {
+  0% {
+            transform: translateY(0);
+  }
+  100% {
+            transform: translateY(100px);
+  }
+}
+@keyframes slide-top {
+  0% {
+            transform: translateY(100px);
+  }
+  100% {
+            transform: translateY(0px);
+  }
+}
+
+
+
+@-webkit-keyframes slide-out-right {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(1000px);
+            transform: translateX(1000px);
+    opacity: 0;
+  }
+}
+@keyframes slide-out-right {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(1000px);
+            transform: translateX(1000px);
+    opacity: 0;
+  }
+}
+
+
+:root
+{
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Nunito', sans-serif;
+    --base-color: '#FCFCF4';
+    --second-color: '#344D6E'; /* rrgb(252, 252, 244); */
+    --3rd-color: rgb(92, 186, 191);
+    --base-font: 'Open Sans';
+    --bold-font: 'Nunito';
+}
+
+
+
+
+
+/* ==========BODY===========*/
+
+
+body
+{
+    background-color: var(--base-color);
+    font-family: var(--base-font);
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    min-width: 1900px;
+    min-height: 800px;
+    overflow-x: auto;
+    height: 100%;
+}
+
+
+header
+{
+    background-color: var(--second-color);
+    width: 100%;
+    height: 50px;
+    z-index: 10;
+    box-shadow: 0px 0px 50px 0px var(--second-color);
+    position: fixed;
+    border-bottom: solid 1px var(--base-color);
+    min-width: 1900px;
+    
+}
+
+
+#header_webside_title
+{
+    float: left;
+    color: var(--base-color);
+    font-size: 30px;
+    padding: 5px;
+    margin-left: 2%;
+}
+
+
+#header_right
+{
+    color: var(--base-color);
+    float: right;
+    font-size: 20px;
+    width: auto;
+    margin-left: 8%;
+    margin-right: 2%;
+    font-family: var(--bold-font);
+    display: flex;
+}
+
+
+#header_right > img
+{
+    width: 50px;
+    height: 50px;
+    margin-left:10px;
+}
+
+
+#header_right > p
+{
+    margin: 13px;
+}
+
+
+
+#header_menu
+{
+    float: right;
+    color: var(--base-color);
+    font-family: var(--bold-font);
+    height: 100%;
+    width: 600px;
+    position: relative;
+}
+
+
+#header_menu::before
+{
+    position: absolute;
+    content: " ";
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--second-color);
+    z-index: -1;
+}
+
+#nightmode
+{
+    height: 100%;
+    font-family: var(--bold-font);
+    width: 130px;
+    background-color:  var(--second-color);
+    transition-duration: 0.1s;
+    border-radius: 50px;
+    color: var(--base-color);
+    bottom:10px;
+    z-index: 1;
+    text-align: center;
+    border: solid 4px var(--second-color);
+    box-shadow: inset 0px 0px 10px -1px cyan;
+    position: relative;
+    left:100px;
+    top:0px;
+    padding-top:3px;
+}
+
+#nightmode:hover
+{
+    color: cyan;
+    background-color: steelblue;
+    
+}
+
+
+/* ===========MENU=========== */
+
+#menu1
+{
+    line-height:2em;
+    text-align:center;
+    display: flex;
+    width: 500px;
+    margin: 0px;
+    padding: 0px;
+}
+#menu_1 > li 
+{
+    float:left;
+    list-style-type:none;
+    width: 25%;
+    height: 100%;
+    text-align: center;
+}
+ol
+{
+    padding: 0;
+}
+#menu_1 > li > a:link, a:visited
+{
+    text-decoration: none;
+    color:var(--base-color);
+    transition: 0.3s;
+}
+#menu_1 > li:hover > a
+{
+    color:var(--3rd-color);
+    transition: 0.1s;
+}
+#menu_1 > li > ul
+{
+    display: none;
+    width: 100%;
+    margin: 10px;
+    padding: 0px;
+    margin-left: 0;
+    position: relative;
+    transition: 1s;
+    top: -100px;
+    z-index: -2;
+}
+#menu_1 > li:hover > ul
+{
+    display: block;
+}
+#menu_1 > li > ul > li
+{
+    list-style-type: none;
+    background-color: var(--second-color); 
+    padding: 10px;
+    transition: 0.3s;
+}
+#menu_1 > li > ul > li:hover > a
+{
+    color:aquamarine;
+    transition: 0.1s;
+}
+.header_placeholder
+{
+    float:right;
+    width:2px;
+    height:60%;
+    margin:10px;
+    background-color: var(--base-color);
+}
+#menu_1 > li > ul
+{
+    position: relative;
+}
+
+#menu_1 > li > ul > li > a  /* LINKI */
+{
+    color:  var(--base-color);
+    text-decoration: none;
+    
+}
+#menu_1 > li:hover > ul
+{
+	   animation: slide-bottom 0.5s both;
+}
+/* ===========END OF MENU=========== */
+
+
+
+
+footer
+{
+    width: 100%;
+    height: 40px;
+    background-color: var(--second-color);
+    box-shadow: 0px 0px 100px 0px var(--second-color);
+    border-top: solid 1px var(--base-color);
+}
+
+#footer_lewy, #footer_prawy
+{
+    color: var(--base-color);
+    margin-top:7px;
+    margin-left: 200px;
+    margin-right: 200px;
+    opacity: 70%;
+    
+}
+
+#footer_lewy
+{
+    float: left;
+}
+
+#footer_prawy > b, #footer_lewy > b
+{
+    margin-right:60px;
+    margin-left:10px;
+}
+
+#footer_prawy
+{
+    float: right;
+}
+
+#midder
+{
+    height: 100%;
+    width: 100%;
+}
+
+
+#midder > div
+{
+    margin:60px;
+    display: flex;
+    text-align: center;
+    align-content: center;
+    margin-bottom: 120px;
+}
+#midder_lewy
+{
+    background: var(--second-color);
+    padding: 60px;
+    width: 400px;
+    height: 100px;
+    border-radius: 0px;
+    color: var(--base-color);
+    padding-top: 20px;
+    padding-bottom: 80px;
+    border: solid 5px var(--second-color);
+    box-shadow: inset 0px 0px 30px -10px var(--base-color);
+    margin-left:12%;
+}
+
+
+#midder_prawy
+{
+    background: var(--second-color);
+    padding: 60px;
+    width: 400px;
+    height: 100px;
+    border-radius: 0px;
+    color: var(--base-color);
+    padding-top: 20px;
+    padding-bottom: 80px;
+    border: solid 5px var(--second-color);
+    box-shadow: inset 0px 0px 30px -10px var(--base-color);
+    margin-left: 15%;
+    margin-right: 12%;
+}
+
+
+#midder_lewy > span
+{
+    font-family: var(--bold-font);
+    transition: 0.2s;
+    font-size: 19px;
+}
+#midder_lewy > p
+{
+    color:aqua;
+    font-size: 66px;
+    margin: -10px;
+    transition: 0.2s;
+    margin-bottom: 0px;
+    position: relative;
+}
+
+#midder_lewy:hover > p
+{
+    font-size: 76px;
+    transition: 0.2s;
+    color: var(--base-color);
+}
+
+#midder_lewy:hover > span
+{
+    color:aqua;
+    font-size: 13px;
+    transition: 0.2s;
+}
+
+#midder_lewy > a
+{
+    text-decoration: none;
+    font-family: var(--bold-font);
+    font-size:20px;
+    border: solid 1px cyan; 
+    border-radius: 10px;
+    padding:5px;
+    transition: 0.2s;
+}
+
+
+#midder_lewy > a:hover
+{
+    color:cyan;
+    background-color: steelblue;
+    transition: 0.2s;
+}
+
+
+
+#midder_prawy > span
+{
+    font-family: var(--bold-font);
+    transition: 0.2s;
+    font-size: 19px;
+    position: relative;
+    right: 106px;
+    bottom: 5px
+}
+#midder_prawy > div
+{
+    color:aqua;
+    font-size: 66px;
+    margin: -10px;
+    transition: 0.2s;
+    margin-bottom: 0px;
+    position: relative;
+}
+
+
+#midder_prawy > div > a
+{
+    text-decoration: none;
+    font-family: var(--bold-font);
+    border: solid 1px cyan; 
+    border-radius: 10px;
+    padding: 5px;
+    transition: 0.2s;
+    position: absolute;
+    right: 200px;
+    top:13;
+}
+
+#midder_prawy > div > img
+{
+    position: relative;
+    top: -15px;
+    left: 130px;
+    transition: 0.2s;
+}
+
+#midder_prawy:hover > div > img
+{
+    position: relative;
+    top: -35px;
+    left: 130px;
+    width: 150px;
+    height: 150px;
+    transition: 0.2s;
+}
+
+#midder_prawy > div > a:hover
+{
+    color:cyan;
+    background-color: steelblue;
+    transition: 0.2s;
+}
+
+
+#baner
+{
+    margin: 0px;
+    width: 1570px;
+    height: 344px;
+    text-align: center;
+    background-image: url(baner2.jpg); /*  1570x344 */
+    z-index: 0;
+    transition-duration: 1s;
+    border: solid var(--second-color) 4px;
+    margin-top:60px;
+    
+}
+
+
+.baner_buttons
+{
+    height: 40px;
+    width: 40px; ;
+    background-color:  var(--second-color);
+    transition-duration: 0.1s;
+    border-radius: 50px;
+    color: var(--base-color);
+    bottom:10px;
+    z-index: 1;
+    text-align: center;
+    padding-top: 1px;
+    margin-top: 167px;
+    border: solid 4px var(--second-color);
+    box-shadow: inset 0px 0px 10px -1px cyan;
+    position: relative;
+    top:45px;
+}
+
+
+
+.baner_buttons:hover
+{
+    color:cyan;
+    background-color: steelblue;
+    font-size: 20px;
+    padding-top: 4px;
+    
+}
+
+
+.baner_placeholder
+{
+    width: 4%;
+    
+}
+
+#baner_button_r
+{
+    position:relative;
+    right: 22px;
+    visibility: hidden;
+}
+
+#baner_button_l
+{
+    position:relative;
+    left: 22px;
+}
+/* ===========KOMPUTERY=========== */
+#k_midder
+{
+
+    width: 90%;
+    display: flex;
+    margin: 5%;
+    height: auto;
+    margin-top: 200px;
+}   
+
+#midder0
+{
+    width:13%;
+    background-color: var(--second-color);
+    justify-content: center;
+    text-align: center;
+    padding: 40px;
+    color: var(--base-color);
+
+    background-color:var(--base-color);
+}
+#midder0 form
+{
+    border: solid 2px ;
+    border-radius: 10px;
+    padding: 10px;
+    padding-bottom: 30px;
+    box-shadow: inset 0px 0px 25px -10px var(--base-color);
+    background-color:var(--second-color); 
+    height:auto;
+}
+
+
+#midder0 input[type='submit']
+{
+    background-color:  var(--second-color);
+    transition-duration: 0.1s;
+    border-radius: 50px;
+    color: var(--base-color);
+    bottom:10px;
+    z-index: 1;
+    text-align: center;
+    padding:20px;
+    border: solid 4px var(--second-color);
+    box-shadow: inset 0px 0px 10px -1px cyan;
+    font-family: var(--base-font);
+    font-size: 20px;
+}
+#midder0 input[type='submit']:hover
+{
+    color:cyan;
+    background-color: steelblue;
+}
+
+
+#midder0 > form > span
+{
+    float: left;
+    margin: 0px;
+    text-align: left;
+}
+
+#midder0 input
+{
+    background-color: var(--base-color);
+    color: var(--second-color);
+    border: none;
+    text-align: center;
+}
+
+#midder1
+{
+    width: 80%;
+    min-height: 900px;
+
+}
+
+#midder1 > div
+{
+    color: var(--base-color);
+    padding: 10px;
+    padding-bottom: 30px;
+    box-shadow: inset 0px 0px 25px -10px var(--base-color);
+    background-color:var(--second-color);
+    height:150px;
+    margin:40px;
+    overflow: auto;
+    width: 400px;
+    position: relative;
+    left: 300px;
+}
+
+#midder1 #midder1_0
+{
+    display: flex;
+    border-radius: 0px 0px 20px 0px;
+    transition: 1s;
+}
+#midder1 #midder1_0:hover
+{
+    border-radius: 0px 0px 50px 0px;
+    background-color: darkcyan;
+    transition: 0.2s;
+}
+
+#midder1 #midder1_0 div
+{
+    width: 100%;
+}
+#midder1 #midder1_0 div p
+{
+    color:cyan;
+    font-family: var(--bold-font);
+    font-size: 24px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+#midder1 button
+{
+    position: relative;
+    left:290px;
+    top:30px;
+    background-color:  var(--second-color);
+    transition-duration: 0.1s;
+    border-radius: 50px;
+    color: var(--base-color);
+    z-index: 1;
+    text-align: center;
+    padding: 10px;
+    border: solid 4px var(--second-color);
+    box-shadow: inset 0px 0px 10px -1px cyan;
+    font-family: var(--bold-font);
+    font-size: 12px;
+    border:none;
+}
+#midder1 button:hover
+{
+    color:cyan;
+    background-color: steelblue;
+}
+#kon_midder
+{
+    height: 100%;
+    display: flex;
+}
+
+#zdj_midder
+{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 80px;
+}
+
+#kon_midder div
+{
+    width: 300px;
+    height: 300px;
+    margin: 120px;
+    position: relative;
+    top: 100px;
+    background-color: var(--second-color);
+    color:var(--base-color);
+    transition: 1s;
+    text-align: center;
+    padding: 50px;
+    border-radius: 0px 0px 20px;
+    box-shadow: inset 0px 0px 0px 1px var(--base-color);
+    border: solid 7px var(--second-color);
+}
+
+#zdj_midder img
+{
+    height: 250px;
+    margin: 30px;
+
+    position: relative;
+    top: 100px;
+    background-color: var(--second-color);
+    color:var(--base-color);
+    transition: 1s;
+    text-align: center;
+    padding: 20px;
+    box-shadow: inset 0px 0px 0px 1px var(--base-color);
+    border: solid 7px var(--second-color);
+    position:relative;
+    
+}
+
+#zdj_midder img:hover
+{
+    box-shadow: inset 0px 0px 10px -1px cyan;
+}
+
+
+#kon_midder div:hover
+{
+    background: var(--3rd-color);
+    color: var(--second-color);
+    transition: 1s;
+    
+}
+#zal_midder
+{
+    height: 100%;
+    display: flex;
+}
+
+#zal_midder div
+{
+    width: 350px;
+    height: 350px;
+    margin: 120px;
+    position: relative;
+    top: 100px;
+    background-color: var(--second-color);
+    color:var(--base-color);
+    transition: 1s;
+    text-align: center;
+    padding: 50px;
+    box-shadow: inset 0px 0px 0px 1px var(--base-color);
+    border: solid 7px var(--second-color);
+}
+#zal_midder0, #zal_midder2
+{
+    visibility: hidden;
+}
+
+#zal_midder div:hover;
+{
+    background: var(--3rd-color);
+    color: var(--second-color);
+    transition: 1s;
+    
+}
+#zal_midder div input
+{
+    text-align: center;
+    font-family: var(--base-font);
+    color: var(--second-color);
+    margin:5px;
+    background-color:  var(--base-color);
+}
+
+#zal_midder div input:focus
+{
+    outline: none;
+    background-color:var(--3rd-color);
+    font-family: var(--bold-font);
+    font-weight: 700;
+}
+#zal_midder div input[type='submit']
+{
+    background-color:  var(--second-color);
+    transition-duration: 0.1s;
+    border-radius: 50px;
+    color: var(--base-color);
+    z-index: 1;
+    text-align: center;
+    padding: 20px;
+    border: solid 4px var(--second-color);
+    box-shadow: inset 0px 0px 10px -1px cyan;
+    font-family: var(--bold-font);
+    font-size: 20px;
+    position: relative;
+    top: 5px;
+}
+
+#zal_midder div input[type='submit']:hover
+{
+    color:cyan;
+    background-color: steelblue;
+}
+
+#moje_konto_midder
+{
+    height: 100%;
+    display: flex;
+}
+
+#moje_konto_midder div
+{
+    margin: 80px;
+    position: relative;
+    top: 100px;
+    background-color: var(--second-color);
+    color:var(--base-color);
+    transition: 1s;
+    padding: 50px;
+    box-shadow: inset 0px 0px 0px 1px var(--base-color);
+    border: solid 7px var(--second-color);
+}
+
+#mk_midder1
+{
+    height: 600px;
+    width: 800px;
+    text-align: center;
+}
+#mk_midder0
+{
+    height: 70px;
+}
+#mk_midder2
+{
+    visibility: hidden;
+}
+#mk_midder0, #mk_midder2
+{
+    width: auto;
+}
+#mk_midder0
+{
+    text-align: left;
+}
+#mk_midder0 span
+{
+    display: flex;
+    position: relative;
+    right: 10px;
+}
+#mk_midder0 span h3
+{
+    font-size: 11px;
+    font-family: var(--base-font);
+    
+}
+#mk_midder0 span h2
+{
+    font-family: var(--bold-font);
+    
+}
+.zdj
+{
+    display: flex;
+    flex-direction: row;
+}
+
+.placeholder2
+{
+    width:100%;
+    height: 10px;
+    background-color: var(--second-color);
+    position: absolute;
+    top:140px;
+}
+
+.placeholder
+{
+    width: 100%;
+    content: " ";
+    height: 10px;
+    background-color: var(--second-color);
+    margin-top: -60px;
+    margin-bottom: 60px;
+    color:var(--base-color);
+}
+
+.title
+{
+    position: absolute;
+    top:28px;
+    width:100%;
+    text-align: center;
+    font-family: var(--bold-font);
+    font-size: 50px;
+    color: var(--second-color);
+    letter-spacing: 20px;
+}
+
+#af
+{
+    color: var(--second-color);
+    width:1100px;
+    text-align: center;
+    margin: 0px;
+    
+    
+}
+
+
+
+/* ===========END OF KOMPUTERY=========== */
+
+/* ===========SLIDEBAR=========== */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--base-color);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--second-color);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+/* ===========END OF SLIDEBAR=========== */
+
+
+
+
+
+
+
